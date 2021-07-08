@@ -11,7 +11,7 @@ public class Break {
 				break;
 			}
 			
-			//System.out.println(i);
+			System.out.println(i);
 			
 		}
 		
