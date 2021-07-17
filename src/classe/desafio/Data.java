@@ -3,27 +3,32 @@ package classe.desafio;
 
 public class Data {
 
-	String mes;
-	int dia;
-	int ano;
+	public String mes;
+	public int dia;
+	public int ano;
 	
 	Data (){
 		
 	}
 	
 	
-	Data (int diaInicial , String mesInicial, int anoInicial ){
-		dia = diaInicial;
-		mes = mesInicial;
-		ano = anoInicial;
+	public Data (int dia , String mes, int ano){
+		this.dia = dia;
+		this.mes = mes;
+		this.ano = ano;
 	}
 	
 
 	
 	
 	
-	String obterDataformatada() {
-		return String.format("%d/%s/%d", dia, mes, ano);
+	public String obterDataformatada() {
+		final String formato = "%d/%s%d";
+		return String.format(formato,this.dia, mes, ano);
 		
+	}
+	
+	void imprimirDataFormatada() {
+		System.out.println(this.obterDataformatada());
 	}
 }
