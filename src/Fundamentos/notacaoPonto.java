@@ -1,6 +1,6 @@
 package Fundamentos;
 
-public class notacaoPonto {
+public class NotacaoPonto {
 
 	public static void main(String[] args) {
 	

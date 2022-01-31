@@ -11,9 +11,9 @@ public class Usuario {
 	
 	@Override
 	public String toString() {
-		return "Meu nome é " + this.nome + ".";
+		return "Usuario [nome=" + nome + "]";
 	}
-	/*
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -21,6 +21,7 @@ public class Usuario {
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
 		return result;
 	}
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -37,7 +38,9 @@ public class Usuario {
 		} else if (!nome.equals(other.nome))
 			return false;
 		return true;
-	}*/
+	}
+
+
 	
 	
 	
