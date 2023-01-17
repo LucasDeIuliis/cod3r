@@ -4,7 +4,7 @@ public class ContaBanco {
 
 	// Atributos
 	public int numConta;
-	private String tipo;
+	protected String tipo;
 	private String dono;
 	private double saldo;
 	private boolean status;
@@ -20,20 +20,20 @@ public class ContaBanco {
 		System.out.println("Status: " + this.getStatus());
 	}
 
-	public void abrirConta(String t) {
-		this.setTipo(t);
+	public void abrirConta(String conta) {
+		this.setTipo(conta);
 		this.setStatus(true);
-		if (t == "cc") {
+		if (conta == "contaCorrente") {
 			this.saldo = (100);
-		} else if (t == "cp") {
+		} else if (conta == "contaPoupança") {
 			this.saldo = (150);
 		}
 	}
 
 	public void fecharConta() {
-		if (this.getSaldo() > 0) {
+		if (this.getSaldo() > 0 || this.status == true) {
 			System.out.println("Conta não pode ser fechada, pois ainda existe Saldo!");
-		} else if (this.getSaldo() < 0) {
+		} else if (this.getSaldo() < 0 || this.status == true) {
 			System.out.println("Conta não pode ser fechada, pois existe Débito!");
 		} else {
 			this.setStatus(false);
@@ -41,19 +41,19 @@ public class ContaBanco {
 		}
 	}
 
-	public void depositar(double v) {
-		if (this.getStatus()) {
-			this.setSaldo(this.getSaldo() + v);
+	public void depositar(double valor) {
+		if (this.getStatus() == true) {
+			this.setSaldo(this.getSaldo() + valor);
 			System.out.println("Depósito realizado na conta de " + this.getDono());
 		} else {
 			System.out.println("Impossível depositar");
 		}
 	}
 
-	public void sacar(double v) {
+	public void sacar(double valor) {
 		if (this.getStatus()) {
-			if (this.saldo >= v) {
-				this.setSaldo(this.saldo - v);
+			if (this.saldo >= valor) {
+				this.setSaldo(this.saldo - valor);
 				System.out.println("Saque realizado na conta " + this.getDono());
 			} else {
 				System.out.println("Saldo insuficiente");
@@ -65,7 +65,7 @@ public class ContaBanco {
 
 	public void pagarMensal() {
 		int v = 0;
-		if (this.getTipo() == "cc") {
+		if (this.getTipo() == "contaCorrente") {
 			v = 12;
 		} else if (this.getTipo() == "cp") {
 			v = 20;
@@ -128,21 +128,5 @@ public class ContaBanco {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
-	/*
-	 * public void status() { if (this.tipo == "cc"){
-	 * System.out.println("nome do Usuario:"+this.dono);
-	 * System.out.println("Tipo da conta é: Conta Corrente");
-	 * System.out.println("Seu status é:"+this.status);
-	 * System.out.println("seus saldo é: R$"+this.saldo); }else if (this.tipo ==
-	 * "cp"){ System.out.println("nome do Usuario:"+this.dono);
-	 * System.out.println("Tipo da conta é: Conta Poupança");
-	 * System.out.println("Seu status é:"+this.status);
-	 * System.out.println("seus saldo é: R$"+this.saldo);
-	 * 
-	 * }
-	 * 
-	 * }
-	 */
 
 }

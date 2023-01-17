@@ -8,10 +8,10 @@ public class Racha {
 		// linhas comentadas foram no metodo que eu criei .
 		// linhas rodando foram no metodo da aula
 
-		Civic civic = new Civic();
+		Civic civic = new Civic(0);
 		//civic.velocidadeAtual = 20;
 		
-		Ferrari ferrari = new Ferrari();
+		Ferrari ferrari = new Ferrari(400);
 		//ferrari.velocidadeAtual = 0;
 		
 		System.out.println("Ferrari esta a: " +  ferrari.velocidadeAtual + "Km/h");

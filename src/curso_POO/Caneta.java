@@ -5,15 +5,15 @@ public class Caneta {
 	// Atributo
 
 	public String Modelo;
+	public String Cor;
 	private double Ponta;
-	String Cor;
-	int carga;
-	boolean Tampada;
+	protected int carga;
+	protected boolean Tampada;
 	
 
 											// Métodos
 
-	void Status() {
+	public void Status() {
 		System.out.println("O modelo desta caneta é: " + this.Modelo);
 		System.out.println("A cor desta caneta é: " + this.Cor);
 		System.out.println("A carga desta caneta é: " + this.carga);

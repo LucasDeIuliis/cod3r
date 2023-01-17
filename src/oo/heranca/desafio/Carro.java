@@ -3,10 +3,22 @@ package oo.heranca.desafio;
 public class Carro {
 	// linhas comentadas foram no metodo que eu criei .
 	int velocidadeAtual;
+	final int velocidadeMaxima;
+	
+
+	
+	
+	public Carro(int velocidadeMaxima) {
+		this.velocidadeMaxima = velocidadeMaxima;
+	}
 
 	void acelerar() {
+		if(velocidadeAtual +5 > velocidadeMaxima) {
+			velocidadeAtual = velocidadeMaxima;
+		}else {
 		velocidadeAtual += 5;
 	}
+		}
 
 	void freiar() {
 		if (velocidadeAtual >= 5) {
